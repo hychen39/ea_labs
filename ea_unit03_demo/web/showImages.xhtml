@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Demo GrahpicImage tag</title>
+    </h:head>
+    <h:body>
+        <h:link outcome="index">Home </h:link>
+        <h2>Insert an image using URL attribute</h2>
+
+        <p>
+            <code>
+                &#x3C;h:graphicImage url=&#x22;/resources/img/demo_img_01.jpg&#x22; /&#x3E;
+            </code>
+        </p>
+        <h:graphicImage url="/resources/img/demo_img_01.jpg" />
+
+        <h2>Insert an image using library and name attributes (JSF2.0) </h2>
+        <p>
+            <code>
+                &#x3C;h:graphicImage library=&#x22;img&#x22; name=&#x22;demo_img_02.jpg&#x22; /&#x3E;
+            </code>
+        </p>
+
+        <h:graphicImage library="img" name="demo_img_02.jpg" />
+
+        <h3>Insert an image using Resource EL-Resolver</h3>
+        <p>
+            <code>
+                &lt;h:graphicImage value=&quot;\#{resource[&apos;img/demo_img_03.jpg:1_0.jpg&apos;]}&quot; /&gt;
+            </code>
+        </p>
+        <p>
+            Or, 
+            <code>
+                &lt;h:graphicImage library=&quot;img/demo_img_03.jpg&quot; name=&quot;1_0.jpg&quot; /&gt;
+            </code>
+        </p>
+        
+        <h:graphicImage value="#{resource['img/demo_img_03.jpg:1_0.jpg']}" /> <br/>
+        <h:graphicImage library="img/demo_img_03.jpg" name="1_0.jpg" />
+        <p>
+            <a href="https://stackoverflow.com/a/34449432/7820390">Resource EL-Resolver</a>
+        </p>
+    </h:body>
+</html>
+

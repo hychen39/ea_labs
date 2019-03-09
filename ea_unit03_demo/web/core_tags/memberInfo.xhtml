@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>Core Tags Example</title>
+    </head>
+    <body>
+        <div>Core Tags</div>
+        <h:panelGrid columns="2">
+            <f:facet name="header">
+                <h:outputText value="Member Information"/>
+            </f:facet>
+            <h:outputText value="Type:" />
+            <h:outputText value="#{memberBean.selectedMember.type}"/>
+
+            <h:outputText value="Annual Fee:" />
+            <h:outputText value="#{memberBean.selectedMember.yearFee}"/> 
+
+            <h:outputText value="Privileges:" />
+            <h:outputText value="#{memberBean.selectedMember.privilege}"/> 
+
+            <f:facet name="footer">
+                <p>   <h:link outcome="/index" style="margin-right: 5px;">Home</h:link>
+                    <h:link outcome="index_core_tags">Member Selection</h:link>
+                </p>
+            </f:facet>
+        </h:panelGrid>
+
+    </body>
+</html>

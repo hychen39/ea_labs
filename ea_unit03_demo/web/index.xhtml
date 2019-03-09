@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Unit 03 Examples for Facelts tags </title>
+    </h:head>
+    <h:body>
+        <h:outputText value="Hello, My first JSF appliction" /> <br/>
+
+        <h:outputText value="Today is #{currentTime}" />
+
+        <h:form>
+
+            <h:panelGrid columns="2">
+
+                <h:outputLabel for="first_num">1st number:</h:outputLabel> <h:inputText id="first_num" value="#{calculator.num1}"/>
+                <h:outputLabel for="second_num">2nd number:</h:outputLabel> <h:inputText id="second_num" value="#{calculator.num2}" />
+                <h:outputLabel for="result" >Result: </h:outputLabel> <h:outputText value="#{calculator.result}" />
+
+                <h:commandButton value="Calculate" action="#{calculator.add}" />
+
+            </h:panelGrid>
+
+            <h2> Registration </h2>
+            <h:commandLink action="registration">Registration</h:commandLink>
+            
+            <h2>Images </h2>
+            <h:commandLink action="showImages">Images </h:commandLink>
+            
+            <h2>Select Components</h2>
+            <h:commandLink action="selectComponents?faces-redirect=true"> Select Components </h:commandLink>
+            
+            <h2>CommandButtons and Passing values</h2>
+            <h:commandLink action="/core_tags/index_core_tags"> Passing values when clicking a button</h:commandLink>
+        </h:form>
+    </h:body>
+</html>
+

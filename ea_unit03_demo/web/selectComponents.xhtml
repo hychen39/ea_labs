@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Using Selection Components</title>
+    </h:head>
+    <h:body>
+        <h:link outcome="index">Home</h:link>
+        <h1>
+        Using Selection Components
+        </h1>
+        
+        <h:form>
+            Item Label: <h:inputText  value="#{selectionBean.itemLabelToAdd}"/> <br />
+            Item Value: <h:inputText  value="#{selectionBean.itemValueToAdd}"/> <br />
+            <h:commandButton value="Add" action="#{selectionBean.addItem()}"/>
+            <br/>
+            <p>Select One List-Box </p>
+            <h:selectOneListbox  size="3" value="#{selectionBean.selectedValue}"  >
+                <f:selectItem itemLabel="Select" itemValue="0" />
+                <f:selectItems value="#{selectionBean.options}" />
+            </h:selectOneListbox> <br/>
+            
+            <p>Select One Drop-Down Menu </p>
+            <h:selectOneRadio  value="#{selectionBean.selectedValue2}"  >
+                <f:selectItem itemLabel="Select" itemValue="0" />
+                <f:selectItems value="#{selectionBean.options}" />
+            </h:selectOneRadio> <br/>
+            
+            
+            <p>Use POJO as the options</p>
+            <p>Select a car (ID) </p>
+            <h:selectOneMenu value="#{selectionBean.selectedCarID}">
+                <f:selectItems value="#{selectionBean.cars}"
+                               var="car"
+                               itemLabel="#{car.brand.concat(' ').concat(car.engine_hp)}"
+                               itemValue="#{car.id}" 
+                               noSelectionValue="#{selectionBean.cars[0]}"
+                               />
+            </h:selectOneMenu> <br/>
+            
+            
+            The first value you select: <h:outputText value="#{selectionBean.selectedValue}" /> <br/>
+            The Second value you select: <h:outputText value="#{selectionBean.selectedValue2}" /> <br/>
+            The car id you select: <h:outputText value="#{selectionBean.selectedCarID}" /> <br/>
+            
+            <h:commandButton value="Refresh selected value field"  />
+            
+            
+        </h:form>        
+    </h:body>
+</html>
+
