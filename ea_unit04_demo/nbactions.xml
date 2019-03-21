@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-cargo-deploy</actionName>
+            <displayName>cargo-deploy</displayName>
+            <goals>
+                <goal>cargo:deploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-package</actionName>
+            <displayName>package</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+        </action>
+    </actions>

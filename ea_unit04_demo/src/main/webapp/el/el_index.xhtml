@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Essential Features of the Unified EL</title>
+        <h:outputStylesheet library="css" name="main.css" />
+    </h:head>
+    <h:body>
+        <h:link styleClass="navlink" outcome="/index">Home</h:link> 
+        <h:link styleClass="navlink" outcome="showRequestHeader">Show request header values</h:link> 
+        
+        <h1>Use the Implicit Objects with EL</h1>
+        <p>param: This is a map view of all the query parameters for this request. 
+            It is returned by <code> getRequestParameterMap </code>.</p>
+        <h:form>
+            <h2>param</h2>
+            <p>Show the parameter values in the request below:</p>
+
+            <h:commandButton value="Set parameters">
+                <f:param name="id" value="12345" />
+                <f:param name="player" value="John Wall" />
+            </h:commandButton>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="playerid" value="ID:" rendered="#{! empty param['id']}"/>
+                <h:outputText  id="playerid" value="#{param['id']}" />
+                <h:outputLabel for="player" value="Player:" rendered="#{! empty param['player']}"/>
+                <h:outputText id="player" value="#{param['player']}" />
+            </h:panelGrid>
+
+            <h2>paramValues</h2>
+            <p>Show the parameter value of String array:</p>
+            <h:link value="Link with query string" outcome="/el/el_index?players=Lin D.&amp;players=Shi. Y.C." />
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Players[0]:" />
+                <h:outputText value="#{paramValues['players'][0]}" />
+                <h:outputLabel value="Players[1]:" />
+                <h:outputText value="#{paramValues['players'][1]}" />
+            </h:panelGrid>
+
+
+        </h:form>
+
+        <h:form>
+            <h2>Session Scope</h2>
+            <p>Show the values stored in the session:</p>
+            <h:selectManyCheckbox value="#{sessionScope['avengers']}">
+                <f:selectItem itemLabel="Iron Man" itemValue="iron_man" />
+                <f:selectItem itemLabel="Black Widow" itemValue="black_widow" />
+                <f:selectItem itemLabel="Hulk" itemValue="hulk" />
+            </h:selectManyCheckbox>
+            <h:commandButton value="Submit" />
+            <p> The avenger you select: </p>
+            <ul>
+                <ui:repeat value="#{sessionScope['avengers']}" var="avanger">
+                    <li> #{avanger} </li>
+                </ui:repeat>
+            </ul>
+        </h:form>
+
+        <h:form>
+            <h2> resources </h2>
+            <p>Use the radio buttons to show or hide the image.</p>
+            <h:selectOneRadio value="#{sessionScope['showImg']}" onclick="this.form.submit()">
+                <f:selectItem itemLabel="Show" itemValue="true" />
+                <f:selectItem itemLabel="Hide" itemValue="false" />
+            </h:selectOneRadio>
+            <ui:fragment  rendered="#{sessionScope['showImg']}">
+                <img src="#{resource['img/front:img10.jpg']}" width="400" />
+            </ui:fragment>
+        </h:form>
+    </h:body>
+</html>
+

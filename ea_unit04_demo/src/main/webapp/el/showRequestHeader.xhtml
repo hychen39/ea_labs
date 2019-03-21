@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Show request header values</title>
+    </h:head>
+    <h:link outcome="el_index">Back to EL Demo Home</h:link>
+    <h:body>
+        <p> Show request header values using EL implicit objects: </p>
+        <dl>
+    <c:forEach items="#{headerValues}" var="entry">
+        <dt>#{entry.key}</dt>
+        <c:forEach items="#{entry.value}" var="headerValue">
+            <dd>#{headerValue}</dd>
+        </c:forEach>
+    </c:forEach>
+</dl>
+       
+    </h:body>
+</html>
+
