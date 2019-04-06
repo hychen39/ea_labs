@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Unit 06 - Lab 03</title>
+    </h:head>
+    <h:body>
+        <p>
+        EJB module and JSF web component are deployed separately. <br/>
+        The remote interface locates in an independent jar file. <br/>
+        The EJB module implement the remote interface. <br/>
+        The JSF web component dependents the remote interface. The container
+        inject the EJB instance that implements the remote interface to the CDI bean
+        in the JSF web component.
+        </p>
+        <p>Current time #{timeServiceBean.currentTime}</p>
+    </h:body>
+</html>
+
