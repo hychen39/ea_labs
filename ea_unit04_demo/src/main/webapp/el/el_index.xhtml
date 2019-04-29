@@ -68,9 +68,17 @@
                 <f:selectItem itemLabel="Show" itemValue="true" />
                 <f:selectItem itemLabel="Hide" itemValue="false" />
             </h:selectOneRadio>
+          
+            使用 EL 語法 <pre> \#{resource['libraryName:resourceName']}</pre> 
+            
+            <p>如果 library 或 resource 有進行版本編號, 自動找最高的版本.</p>
+            
+            Render 的圖片的 url <pre> &lt;img src="/ea_unit04_demo/faces/javax.faces.resource/img1.jpg?ln=img&amp;v=1_02_0" width="400"&gt; </pre>
+            
             <ui:fragment  rendered="#{sessionScope['showImg']}">
-                <img src="#{resource['img/front:img10.jpg']}" width="400" />
+                <img src="#{resource['img:img1.jpg']}" width="400" />
             </ui:fragment>
+          
         </h:form>
     </h:body>
 </html>

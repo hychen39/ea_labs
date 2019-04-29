@@ -11,3 +11,6 @@ Contact Info: hychen39@gm.cyut.edu.tw
   - `h:commandXXX`
   - `f:param` and `f:attribute`
 - ea_unit04_demo: Unit 04 - Developing with CDI beans
+
+- ea_unit07_demo: 使用 Facade Pattern 實作資料庫的 CRUD.
+  
