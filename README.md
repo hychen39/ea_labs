@@ -13,4 +13,8 @@ Contact Info: hychen39@gm.cyut.edu.tw
 - ea_unit04_demo: Unit 04 - Developing with CDI beans
 
 - ea_unit07_demo: 使用 Facade Pattern 實作資料庫的 CRUD.
+
+- ea_unit08_demo
+
+- ea_unit09_demo: JPQL 的 demo application. 使用 Derby 內的 Sample 資料庫來示範 JPQL 及使用 JUnit 測試 JPQL 相關的程式。
   
