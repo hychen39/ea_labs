@@ -18,3 +18,5 @@ Contact Info: hychen39@gm.cyut.edu.tw
 
 - ea_unit09_demo: JPQL 的 demo application. 使用 Derby 內的 Sample 資料庫來示範 JPQL 及使用 JUnit 測試 JPQL 相關的程式。
   
+- ea_unit09_demo: Converter and Validator in the JSF framework.
+  

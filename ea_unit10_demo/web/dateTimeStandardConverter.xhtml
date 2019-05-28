@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Standard DateTime Converter</title>
+        <style>
+            .result {
+                font-weight: bold;
+                padding-left: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body>
+      <p>Show the current date at time zone GMT+8</p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="date" dateStyle="full" timeZone="GMT+8" />
+        </h:outputText>
+        
+         <p>Show the current time at time zone GMT+8</p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="time" timeStyle="full" timeZone="GMT+8"  />
+        </h:outputText>
+         
+          <p>Show the current date and date at time zone Asia/Taipei</p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="both" dateStyle="full" timeStyle="full" timeZone="Asia/Taipei"  />
+        </h:outputText>
+
+        <p>Show the current date and time without specifying the time zone attribute</p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="both" dateStyle="full" timeStyle="full" />
+        </h:outputText>
+
+        <p>Show the current date and time with local zh_TW at time zone Asia/Taipei</p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="both" dateStyle="full" locale="zh_TW" timeZone="Asia/Taipei" />
+        </h:outputText>
+       
+        
+        <p>Show the current date and time with pattern: yyyy/MM/dd hh:mm </p>
+        <h:outputText class="result" value="#{creditCardService.currentDateTime}">
+            <f:convertDateTime type="both" pattern="yyyy/MM/dd hh:mm ZZ"  timeZone="Asia/Taipei" />
+        </h:outputText>
+    </h:body>
+</html>
+

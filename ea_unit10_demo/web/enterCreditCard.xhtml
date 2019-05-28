@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Credit Card Example</title>
+    </h:head>
+    <h:body>
+        <h1>Provide the credit card information</h1>
+        <h:form>
+
+            <h:panelGrid columns="2">
+                <!--card type-->
+                Card Type:
+                <h:selectOneMenu id="card_type"  value="#{flash.cardType}">
+                    <f:selectItems value="${creditCardService.acceptCardType}" />
+                </h:selectOneMenu> 
+                
+                Card Number: 
+                <h:panelGroup>
+                    <h:inputText id="cardNumber" value="#{flash.cardNumber}"
+                                 converter="com.example.converter.CardNumberConverter"
+                                 required="true"
+                                 label="Card Number"/>
+                    <h:message for="cardNumber" />
+                </h:panelGroup>
+                
+                Name of Credit Card: 
+                <h:inputText label="Name_of_credit_card" value="#{flash.name}">
+                    <f:validator validatorId="javax.faces.Required" />
+                </h:inputText>
+                
+                Expired Date:
+                <h:panelGroup>
+                    <h:inputText 
+                        id="expired_date"
+                        label="expired_date_field"
+                        value="#{flash.expiredDate}" 
+                        requiredMessage="請輸入到期日"
+                        converterMessage="正確日期格式為 MM/yy, 例如: 08/19"
+                        validatorMessage="年分有效範圍 2015 - 2025" >
+
+                        <f:convertDateTime pattern="MM/yy" />
+                        <f:validateRequired />
+                        <f:validator validatorId="com.example.ExpiredDateValidator" />
+                    </h:inputText>
+                    <h:message for="expired_date" />
+                </h:panelGroup>
+            </h:panelGrid>
+            <h:commandButton type="submit" value="Sumbit" action="confirm"  />
+            <h:commandButton type="reset" value="reset" /> <br/>
+            <h:link outcome="showCreditCard">Show Credit Card in Session Scope</h:link>
+        </h:form>
+
+    </h:body>
+</html>
+
