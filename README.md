@@ -20,3 +20,5 @@ Contact Info: hychen39@gm.cyut.edu.tw
   
 - ea_unit09_demo: Converter and Validator in the JSF framework.
   
+- ea_unit11_demo: Handling application events in the JSF Framework.
+

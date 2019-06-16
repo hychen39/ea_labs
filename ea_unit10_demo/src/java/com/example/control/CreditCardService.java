@@ -81,6 +81,10 @@ public class CreditCardService implements Serializable {
         
     }
     
+    public Date getCurrentDateTimeNoTZ(){
+        return new Date();
+    }
+    
     public double getRandNumber(){
         return Math.random() * 1000000;
     }
