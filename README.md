@@ -7,7 +7,7 @@ Contact Info: hychen39@gm.cyut.edu.tw
 
 - ea_unit01_demo: Hello JSF.
 
-- ea_unit03_demo: Unit 03 - Creating JSF Pages using Facelets Technology.
+- ea_unit02_demo: Unit 03 - Creating JSF Pages using Facelets Technology.
   - `h:graphicImage`
   - `h:selectionXXX`
   - `h:commandXXX`
