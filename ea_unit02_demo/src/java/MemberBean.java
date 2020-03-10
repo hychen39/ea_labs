@@ -6,7 +6,6 @@
 import entities.MemberCenter;
 import entities.MemberCenter.Member;
 import java.util.Map;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 //  SessionScoped;
 import javax.faces.context.FacesContext;
@@ -66,7 +65,7 @@ public class MemberBean implements java.io.Serializable {
     }
 
     /**
-     * Event Listener Method
+     * Action Listener
      * @param event 
      */
     public void selectTypeAction(ActionEvent event) {
@@ -79,7 +78,10 @@ public class MemberBean implements java.io.Serializable {
                                    MemberCenter.getGoldMember():MemberCenter.getPlatinumMember();
         System.out.println("Invoke the Action Event");
     }
-    
+    /**
+     * Action Method
+     * @return target page name
+     */
     public String showMemberInfo(){
         // get parameter values from f:param f
         String custType;

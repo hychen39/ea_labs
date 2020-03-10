@@ -8,13 +8,14 @@
     <h:body>
         <h:link outcome="index">Home </h:link>
         <h2>Insert an image using URL attribute</h2>
-
         <p>
             <code>
-                &#x3C;h:graphicImage url=&#x22;/resources/img/demo_img_01.jpg&#x22; /&#x3E;
+                &#x3C;h:graphicImage url=&#x22;/resources/default/img/demo_img_01.jpg&#x22; /&#x3E;
             </code>
         </p>
-        <h:graphicImage url="/resources/img/demo_img_01.jpg" />
+        
+        <h:graphicImage url="/resources/default/img/demo_img_01.jpg" />
+        
 
         <h2>Insert an image using library and name attributes (JSF2.0) </h2>
         <p>
@@ -23,23 +24,42 @@
             </code>
         </p>
 
-        <h:graphicImage library="img" name="demo_img_02.jpg" />
+        <h:graphicImage library="default" name="img/demo_img_02.jpg" />
+
+        <h3>Use library and resource name to access the image files</h3>
+        <p>
+            The default JSF ResourceHandler will always get the highest version to display 
+            if we don't specify the version.
+        </p>
+        <p>
+            Specify the resource version to display <br/> 
+            <code>
+
+                &lt;h:graphicImage library=&quot;defaut&quot; name=&quot; img/demoImg03.jpg/1_0.jpg&quot; /&gt;
+            </code><br/>
+            <h:graphicImage library="default" name="img/demoImg03.jpg/1_0.jpg" /> <br/>
+
+            Not specify the resource version to display <br/> 
+            <code>
+
+                &lt;h:graphicImage library=&quot;defaut&quot; name=&quot; img/demoImg03.jpg&quot; /&gt;
+            </code><br/>
+
+            <h:graphicImage library="default" name="img/demoImg03.jpg" />
+        </p>
 
         <h3>Insert an image using Resource EL-Resolver</h3>
         <p>
+            Use the EL implicit object <code>resource</code> to access the resource:<br/>
             <code>
-                &lt;h:graphicImage value=&quot;\#{resource[&apos;img/demo_img_03.jpg:1_0.jpg&apos;]}&quot; /&gt;
-            </code>
+                &lt;h:graphicImage value=&quot;\#{resource[&apos; default:img/demo_img_03.jpg &apos;]}&quot; /&gt;
+            </code> <br/>
+            <h:graphicImage value="#{resource['default:img/demoImg03.jpg']}" /> <br/>
         </p>
-        <p>
-            Or, 
-            <code>
-                &lt;h:graphicImage library=&quot;img/demo_img_03.jpg&quot; name=&quot;1_0.jpg&quot; /&gt;
-            </code>
-        </p>
-        
-        <h:graphicImage value="#{resource['img/demo_img_03.jpg:1_0.jpg']}" /> <br/>
-        <h:graphicImage library="img/demo_img_03.jpg" name="1_0.jpg" />
+
+
+
+
         <p>
             <a href="https://stackoverflow.com/a/34449432/7820390">Resource EL-Resolver</a>
         </p>
