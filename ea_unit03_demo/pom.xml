@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hychen39</groupId>
-    <artifactId>ea_unit04_demo</artifactId>
+    <artifactId>ea_unit03_demo</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>ea_unit04_demo</name>
+    <name>ea_unit03_demo</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
