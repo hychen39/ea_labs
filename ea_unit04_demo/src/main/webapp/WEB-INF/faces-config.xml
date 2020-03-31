@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ <navigation-rule>
+        <display-name>Login from index</display-name>
+        <from-view-id>navigationModel/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{login.loginAction}</from-action>
+            <from-outcome>P1</from-outcome>
+            <if>#{login.isLoginEnable}</if>
+            <to-view-id>navigationModel/success.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{login.loginAction}</from-action>
+            <from-outcome>P2</from-outcome>
+            <to-view-id>navigationModel/failure.xhtml</to-view-id>
+            <redirect>true</redirect>
+        </navigation-case>
+        <navigation-case>
+            <to-view-id>navigationModel/failure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
