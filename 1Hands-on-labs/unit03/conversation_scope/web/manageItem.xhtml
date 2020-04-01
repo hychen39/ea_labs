@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Manage Items</title>
+    </h:head>
+    <h:body>
+        <h2> Use Case </h2>
+        操作步驟:
+        <ol>
+            <li>在Home 頁面中按下 Manage Item 鈕進入 Manage Item Page進行清單管理頁面(Conversation 開始)。
+                Manage Item Page 一開始會顯示預設清單。</li>
+            <li>按下在項目旁的 Delete 鈕，移除該項目，並顯示更新後的清單。</li>
+            <li>按下 Refresh 鈕，在同一頁面顯示現有清單項目</li>
+            <li>按下 Home 鈕，回 Home 頁面，但清單內容仍保留目前現況</li>
+            <li>按下 End 鈕，結束清單內容的編輯，回Home 頁面。此時，重置清單內容為預設值。</li>
+        </ol>
+
+        <h:form>
+            <!--Show item info using table-->
+            <h:dataTable value="#{auctionItemsBean.items}" var="item">
+                <!--table header-->
+                <f:facet name="header">
+                    <h:outputText value="拍賣清單 " /> <br />
+                    Counts: <h:outputText value="#{auctionItemsBean.size()}" />
+                </f:facet>
+
+                <h:column>
+                    <!--column header-->
+                    <f:facet name="header" >
+                        <h:outputText value="Items" />
+                    </f:facet>
+                    <!--row content-->
+                    <h:outputText value="#{item}" />
+                </h:column>
+
+                <h:column>
+                    <h:commandButton value="Delete" action="#{auctionItemsBean.deleteItem(item)}" />
+                </h:column>
+
+                <!--table footer-->
+                <f:facet name="footer">
+                    <h:panelGroup>
+                        <h:inputText id="newItemName" value="#{auctionItemsBean.newItemName}" /> 
+                        <h:message for="newItemName" />
+                        <h:commandButton value="Add item" type="submit" action="#{auctionItemsBean.addItem()}" />
+                    </h:panelGroup> <br/>
+                </f:facet>
+            </h:dataTable>
+            <h:commandButton value="Refresh" type="submit" />
+            <h:commandButton value="End" action="#{auctionItemsBean.end()}"/>
+            <h:commandButton value="Home" action="index" />
+        </h:form>
+
+    </h:body>
+</html>
+
