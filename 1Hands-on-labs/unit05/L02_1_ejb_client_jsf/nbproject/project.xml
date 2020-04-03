@@ -3,14 +3,15 @@
     <type>org.netbeans.modules.web.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
-            <name>u06_ejb_client_jsf</name>
+            <name>L02_1_ejb_client_jsf</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <web-module-libraries>
                 <library dirs="200">
                     <file>${libs.jsf20.classpath}</file>
                 </library>
                 <library dirs="100">
-                    <file>${reference.u06_time_service_ejb.dist}</file>
+                    <file>${reference.L02_2_time_service_ejb.dist}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
@@ -23,7 +24,7 @@
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
             <reference>
-                <foreign-project>u06_time_service_ejb</foreign-project>
+                <foreign-project>L02_2_time_service_ejb</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>dist</target>

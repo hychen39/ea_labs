@@ -1,7 +1,13 @@
 # ea_labs
-Demo code for the course of Enterprise Application Development
+Demo codes for the course of Enterprise Application Development
 
 Contact Info: hychen39@gm.cyut.edu.tw
+
+# Directory Structures
+
+- `./` demo codes for each unit
+- `./0Assignments/`  semi-finished codes for doing the assignments
+- `./1Hands-on-labs/` completed hands-on labs
 
 # Development environment
 JDK 8
@@ -20,8 +26,12 @@ Glassfish 5
   - `f:param` and `f:attribute`
 
 - ea_unit03_demo: Unit 03 - Developing with CDI beans
+- 
+- ea_unit04_demo: Unit 04 - Working with the navigation
 
-- ea_unit07_demo: 使用 Facade Pattern 實作資料庫的 CRUD.
+- ea_unit05_demo: Unit 05 - Introduction to Enterprise JavaBean (EJB). Demo how to inject EJB component to CDI bean in the JSF application.
+
+<!-- - ea_unit07_demo: 使用 Facade Pattern 實作資料庫的 CRUD.
 
 - ea_unit08_demo
 
@@ -29,7 +39,7 @@ Glassfish 5
   
 - ea_unit09_demo: Converter and Validator in the JSF framework.
   
-- ea_unit11_demo: Handling application events in the JSF Framework.
+- ea_unit11_demo: Handling application events in the JSF Framework. -->
 
 # 使用 Payara 5 時開發 JSF 專案時要做的設定
 

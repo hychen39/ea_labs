@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="u06_time_service_jsf_ejb" default="default" basedir=".">
-    <description>Builds, tests, and runs the project u06_time_service_jsf_ejb.</description>
+<project name="L01_time_service_jsf_ejb" default="default" basedir=".">
+    <description>Builds, tests, and runs the project L01_time_service_jsf_ejb.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
