@@ -5,7 +5,7 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
  <navigation-rule>
         <display-name>Login from index</display-name>
-        <from-view-id>navigationModel/index.xhtml</from-view-id>
+        <from-view-id>navigationModel/*</from-view-id>
         <navigation-case>
             <from-action>#{login.loginAction}</from-action>
             <from-outcome>P1</from-outcome>
