@@ -3,19 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
 import java.io.Serializable;
+import java.util.Collection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
- * @author hychen39@gm.cyut.edu.tw
- * @since Apr 27, 2019
+ * @author user
  */
 @Entity
 public class Customer implements Serializable {
@@ -24,7 +28,32 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CUST_REC", referencedColumnName = "ID")
+    private Record custRecord;
+    
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "CUST_ID", referencedColumnName = "ID")
+    private Collection<SalesOrder> salesOrders;
+
+    public Record getCustRecord() {
+        return custRecord;
+    }
+
+    public void setCustRecord(Record custRecord) {
+        this.custRecord = custRecord;
+    }
+
+    public Collection<SalesOrder> getSalesOrders() {
+        return salesOrders;
+    }
+
+    public void setSalesOrders(Collection<SalesOrder> salesOrders) {
+        this.salesOrders = salesOrders;
+    }
+    
+    
 
     public Long getId() {
         return id;
@@ -34,15 +63,6 @@ public class Customer implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -67,5 +87,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "entities.Customer[ id=" + id + " ]";
     }
-
+    
 }

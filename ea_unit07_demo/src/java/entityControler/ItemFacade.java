@@ -21,7 +21,7 @@ import javax.persistence.PersistenceContext;
 @LocalBean
 public class ItemFacade extends AbstractFacade<Item>{
 
-    @PersistenceContext(unitName = "ua_unit07_demoPU")
+    @PersistenceContext(unitName = "ea_unit07_demoPU")
     private EntityManager em;
     
     // default constructor

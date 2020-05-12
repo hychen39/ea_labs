@@ -7,6 +7,7 @@ package entityControler;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 
 /**
@@ -18,7 +19,7 @@ public class CustomerJPA {
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
-    @PersistenceUnit(unitName = "ua_unit07_demoPU")
+    @PersistenceContext(unitName = "ea_unit07_demoPU")
     private EntityManager em;
 
     public EntityManager getEm() {
