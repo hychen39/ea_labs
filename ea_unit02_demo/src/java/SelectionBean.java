@@ -8,8 +8,12 @@ import entities.Car;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.faces.model.SelectItem;
 
@@ -40,6 +44,17 @@ public class SelectionBean implements Serializable {
     public List<Car> getCars() {
         return cars;
     }
+    
+    public Collection<Car> getCarsCollection(){
+        return cars;
+    }
+    
+    public Set<Car> getCarsSet(){
+        return new HashSet<>(cars);
+    }
+    public ArrayList<Car> getCarsArrayList(){
+        return (ArrayList<Car>) cars;
+    }
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
@@ -54,7 +69,7 @@ public class SelectionBean implements Serializable {
         options = new LinkedList<>();
         options.add(new SelectItem(1, "Item 1"));
         options.add(new SelectItem(2, "Item 2"));
-        cars = new LinkedList<>();
+        cars = new ArrayList<>();
         cars.add(new Car(1, "Toyta YARIS", "90 hp"));
         cars.add(new Car(2, "Toyta SIENTA", "100 hp"));
         cars.add(new Car(3, "Toyta VIOS", "100 hp"));

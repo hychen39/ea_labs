@@ -41,6 +41,25 @@
                                />
             </h:selectOneMenu> <br/>
             
+            <p>Bean method return <code>ArrayList&lt;car&gt;</code></p>
+            <h:selectOneMenu value="#{selectionBean.selectedCarID}">
+                <f:selectItems value="#{selectionBean.carsArrayList}"
+                               var="car"
+                               itemLabel="#{car.brand.concat(' ').concat(car.engine_hp)}"
+                               itemValue="#{car.id}" 
+                               noSelectionValue="#{selectionBean.cars[0]}"
+                               />
+            </h:selectOneMenu> <br/>
+            
+            <p>Bean method return <code>Set &lt;car&gt;</code></p>
+            <h:selectOneMenu value="#{selectionBean.selectedCarID}">
+                <f:selectItems value="#{selectionBean.carsSet}"
+                               var="car"
+                               itemLabel="#{car.brand.concat(' ').concat(car.engine_hp)}"
+                               itemValue="#{car.id}" 
+                               noSelectionValue="#{selectionBean.cars[0]}"
+                               />
+            </h:selectOneMenu> <br/>
             
             The first value you select: <h:outputText value="#{selectionBean.selectedValue}" /> <br/>
             The Second value you select: <h:outputText value="#{selectionBean.selectedValue2}" /> <br/>
