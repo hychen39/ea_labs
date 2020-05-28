@@ -14,16 +14,38 @@
                 Description: <h:inputText value="#{itemBean.newItem.description}" />
                 Image URL: <h:inputText value="#{itemBean.newItem.image}" />
             </h:panelGrid>
-            <h:commandButton action="#{itemBean.addItem}" value="Add Item"/>
+            <h:commandButton action="#{itemBean.addItem()}" 
+                             value="Add Item"
+                             rendered="#{not itemBean.isEditMode}"/> 
+            <h:commandButton action="#{itemBean.updateItem()}" 
+                             value="Update"
+                             rendered="#{itemBean.isEditMode}"/>
         </h:form>
         List of Items
-        <ul>
-           
-            <ui:repeat value="#{itemBean.findAll()}" var="item" rendered="#{itemBean.findAll() != null}">
-                    <li> #{item.id}, #{item.description}, #{item.image}  </li>
+
+        <h:form>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Image URL</th>
+                    <th colspan="2">Actions</th>
+                </tr>
+                <ui:repeat value="#{itemBean.findAll()}" var="item" rendered="#{itemBean.findAll() != null}">
+                    <tr> 
+                        <td> #{item.id} </td> 
+                        <td> #{item.description} </td> 
+                        <td> #{item.image}  </td>
+                        <td> <h:commandButton action="#{itemBean.editItem(item.id)}" 
+                                              value = "Edit"/> </td>
+                        <td> <h:commandButton action="#{itemBean.delItem(item.id)}" 
+                                              value="Delete" /> </td>
+                    </tr>
                 </ui:repeat>
-           
-        </ul>
+            </table>
+        </h:form>
+        <ui:debug hotkey="z" />
+
     </h:body>
 </html>
 

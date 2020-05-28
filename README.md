@@ -35,13 +35,17 @@ Glassfish 5
 
 - ea_unit07_demo: uni-directional and bi-directional one-to-one, one-to-many, and many-to-many.
 
-- ea_unit09_demo: Demo JPQL. Use the sample database in the Derby to demo the JPQL codes and use the JUnit to test them.
-  
-- ea_unit09_demo: Converter and Validator in the JSF framework.
-  
-- ea_unit11_demo: Handling application events in the JSF Framework. -->
+- ea_unit08_demo: Use EntityManager Factory to create the EntityManager. Create and execute JPQL, including: dynamic, named, typed named queries. 
 
-ea_unitXX_demo: 使用 Facade Pattern 實作資料庫的 CRUD.
+- sample_database.sql: SQL statements to create the sample database for ea_unit08_1.
+
+<!-- - ea_unit09_demo: Demo JPQL. Use the sample database in the Derby to demo the JPQL codes and use the JUnit to test them. -->
+  
+<!-- - ea_unit09_demo: Converter and Validator in the JSF framework. -->
+  
+<!-- - ea_unit11_demo: Handling application events in the JSF Framework. --> 
+
+<!-- ea_unitXX_demo: 使用 Facade Pattern 實作資料庫的 CRUD. -->
 
 # 使用 Payara 5 時開發 JSF 專案時要做的設定
 
