@@ -42,6 +42,8 @@ Glassfish 5
 <!-- - ea_unit09_demo: Demo JPQL. Use the sample database in the Derby to demo the JPQL codes and use the JUnit to test them. -->
   
 - ea_unit09_demo: Converter and Validator in the JSF framework.
+
+- ea_unit11_demo/unit11_lab1: Use JSF templates.
   
 <!-- - ea_unit11_demo: Handling application events in the JSF Framework. --> 
 
