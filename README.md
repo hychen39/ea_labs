@@ -44,6 +44,8 @@ Glassfish 5
 - ea_unit09_demo: Converter and Validator in the JSF framework.
 
 - ea_unit11_demo/unit11_lab1: Use JSF templates.
+
+- ea_unit11_demo/unit11_lab2: Ajax and Phase listener
   
 <!-- - ea_unit11_demo: Handling application events in the JSF Framework. --> 
 
