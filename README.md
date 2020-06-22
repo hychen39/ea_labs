@@ -47,13 +47,17 @@ Glassfish 5
   - ea_unit11_demo/unit11_lab1: Use JSF templates.
   - ea_unit11_demo/unit11_lab2: Ajax and Phase listener
 
-- ea_unit12_demo
-  - ea_unit12_demo/secureApp-base: Project for practicing securing configuration for the JSF application.
-  - ea_unit12_demo/secureApp-complete: Completed project.
   
 <!-- - ea_unit11_demo: Handling application events in the JSF Framework. --> 
 
 <!-- ea_unitXX_demo: 使用 Facade Pattern 實作資料庫的 CRUD. -->
+
+## 1Hands-on-labs directory
+
+- unit12
+  - unit12/secureApp-base: Project for practicing securing configuration for the JSF application.
+  - unit12/secureApp-complete: Completed project.
+
 
 # 使用 Payara 5 時開發 JSF 專案時要做的設定
 
