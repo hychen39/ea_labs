@@ -43,9 +43,13 @@ Glassfish 5
   
 - ea_unit09_demo: Converter and Validator in the JSF framework.
 
-- ea_unit11_demo/unit11_lab1: Use JSF templates.
+- ea_unit11_demo
+  - ea_unit11_demo/unit11_lab1: Use JSF templates.
+  - ea_unit11_demo/unit11_lab2: Ajax and Phase listener
 
-- ea_unit11_demo/unit11_lab2: Ajax and Phase listener
+- ea_unit12_demo
+  - ea_unit12_demo/secureApp-base: Project for practicing securing configuration for the JSF application.
+  - ea_unit12_demo/secureApp-complete: Completed project.
   
 <!-- - ea_unit11_demo: Handling application events in the JSF Framework. --> 
 
